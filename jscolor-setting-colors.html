@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Setting colors</title>
+</head>
+<body>
+
+
+<script src="jscolor.js"></script>
+
+<p>Move mouse over these buttons!</p>
+
+<div style="background:#FF9900" onclick="document.getElementById('foo')
+    .jscolor.fromString('ff9900')">fromString()</div>
+
+<div style="background:#4DE633" onclick="document.getElementById('foo')
+    .jscolor.fromRGB(77, 230, 51)">fromRGB()</div>
+
+<div style="background:#80CCFF" onclick="document.getElementById('foo')
+    .jscolor.fromHSV(204, 50, 100)">fromHSV()</div>
+
+<p><input class="jscolor" id="foo"></p>
+
+
+<p style="margin-top:3em;">Check out <a href="http://jscolor.com/examples/">more examples at jscolor.com</a>!</p>
+
+
+</body>
+</html>

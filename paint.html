@@ -5,14 +5,38 @@
     <title>title</title>
   </head>
   <body>
+      <h1> Kuizu </h1>
 	<div id="paint">
 	<canvas id="myCanvas" style="border:1px solid black;"  ></canvas>
 	</div>
-	<script type="text/javascript">
+
+      <script src="jscolor.js"></script>
+
+      <p> Select pen colour! </p>
+
+    <div style="background:#FF9900" onclick="document.getElementById('foo')
+    .jscolor.fromString('ff9900')">Orange</div>
+
+      <div style="background:#4DE633" onclick="document.getElementById('foo')
+    .jscolor.fromRGB(77, 230, 51)">Green</div>
+
+      <div style="background:#80CCFF" onclick="document.getElementById('foo')
+    .jscolor.fromHSV(204, 50, 100)">Blue</div>
+      
+     <div style="background:#ffffff" onclick="document.getElementById('foo')
+    .jscolor.fromRGB(255, 255, 255)">Eraser</div>
+
+      <p><input class="jscolor" id="foo" onclick="color"></p>
+      <script>
+        
+           document.write(document.getElementById("foo").innerHTML;
+      </script>
+      
+	   <script type="text/javascript">      
+           
 		
 		var canvas = document.getElementById('myCanvas');
 		var ctx = canvas.getContext('2d');
-		 
 		var painting = document.getElementById('paint');
 		var paint_style = getComputedStyle(painting);
 		canvas.width = parseInt(paint_style.getPropertyValue('width'));
@@ -24,11 +48,18 @@
 		  mouse.x = e.pageX - this.offsetLeft;
 		  mouse.y = e.pageY - this.offsetTop;
 		}, false);
-
+  
+           var c = document.getElementById("foo").innerHTML;
+           document.write(document.getElementById("foo").innerHTML);
+           /*** var color = function(c){
+            ctx.strokeStyle = c;
+        
+            };**/
+           
 		ctx.lineWidth = 3;
 		ctx.lineJoin = 'round';
 		ctx.lineCap = 'round';
-		ctx.strokeStyle = '#00CC99';
+		ctx.strokeStyle = c;
 		 
 		canvas.addEventListener('mousedown', function(e) {
 			ctx.beginPath();
@@ -45,7 +76,8 @@
 			ctx.lineTo(mouse.x, mouse.y);
 			ctx.stroke();
 		};
-
+         
+           
     </script>
   </body>
 </html>
